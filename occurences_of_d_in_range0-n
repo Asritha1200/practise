@@ -1,0 +1,47 @@
+package first;
+import java.util.Scanner;
+
+public class occurences {
+	static int getoccurence(int n,int d)
+	{
+		int m=d;int count=0;
+		while(m<=n)
+		{
+			if(m%10==d)
+			{
+				count++;
+			}
+			if(m/10==d)
+			{
+				count++;
+				m++;
+				
+			}
+			else if(m/10==d-1)
+			{
+				m=m+(10-d);
+			}
+			else
+			{
+				m=m+10;
+			}
+			
+		}
+		return count;
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("enter a number");
+		int n=sc.nextInt();
+		System.out.println("enter the digit whose occurence is to be determined");
+		int d=sc.nextInt();
+		System.out.println(occurences.getoccurence(n,d));
+		
+		
+	}
+
+}
